@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from app.code import predict_language
+from code import predict_language
 
 import pickle
 app = FastAPI()
-m = pickle.load(open(r'../model/cls_langauage_0.1.pkl', 'rb'))
-cv = pickle.load(open(r'../model/cv_feature.pkl', 'rb'))
+m = pickle.load(open(r'model\cls_langauage_0.1.pkl', 'rb'))
+cv = pickle.load(open(r'model\cv_feature.pkl', 'rb'))
 
 @app.get("/")
 def root():
